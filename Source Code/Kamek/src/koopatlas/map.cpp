@@ -520,6 +520,9 @@ void dWMMap_c::renderPathLayer(dKPLayer_s *layer) {
 			node->extra->model.setScale(0.8f, 0.8f, 0.8f);
 			node->extra->model.calcWorld(false);
 
+			// Process CLR animation we put together in setupNodeExtra()
+			node->extra->anmClr.process();
+
 			node->extra->model.scheduleForDrawing();
 		}
 	}

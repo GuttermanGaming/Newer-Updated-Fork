@@ -56,40 +56,55 @@ void dKPNode_s::setupNodeExtra() {
 	//OSReport("Level %d-%d, isUnlocked: %d, exitComplete: %d", world, level, isUnlocked, exitComplete);
 
 	// default: non-unlocked levels AND completed one-time levels
-	colour = "g3d/black.brres";
+	colour = "cobCourseClose";
 
 	// one-time levels
 	if ((level >= 30) && (level <= 37)) {
 		if (isUnlocked && !exitComplete)
-			colour = "g3d/red.brres";
+			colour = "cobCourseOpen";
 	}
+
 	// the shop
-	else if (level == 99)
-		colour = "g3d/shop.brres";
+	else if (level == 99) {
+		if (isUnlocked)
+			colour = "cobCourseClear"; // TODO: consider making a lighter-blue clr anim for the shops and maybe a unique model with the bag icon?
+		else 
+			colour = "cobCourseClose";
+	}
 
 	else if (isUnlocked) {
 		if (hasSecret) {
 			if (exitComplete && secretComplete)
-				colour = "g3d/blue.brres";
+				colour = "cobCourseClear";
 			else if (exitComplete || secretComplete)
-				colour = "g3d/purple.brres";
+				colour = "cobCourseSecret";
 			else
-				colour = "g3d/red.brres";
+				colour = "cobCourseOpen";
 		} else {
 			if (exitComplete)
-				colour = "g3d/blue.brres";
+				colour = "cobCourseClear";
 			else
-				colour = "g3d/red.brres";
+				colour = "cobCourseOpen";
 		}
 	}
 
 	// model time
 	this->extra->mallocator.link(-1, GameHeaps[0], 0, 0x20);
 
-	nw4r::g3d::ResFile rg(getResource("cobCourse", colour));
-	this->extra->model.setup(rg.GetResMdl("cobCourse"), &this->extra->mallocator, 0x224, 1, 0);
+	nw4r::g3d::ResFile rg(getResource("cobCourse", "g3d/model.brres"));
+	nw4r::g3d::ResMdl course = rg.GetResMdl("cobCourse");
+	this->extra->model.setup(course, &this->extra->mallocator, 0x32C, 1, 0); // Use 0x32C so each node can have it's own CLR animation
 	this->extra->matrix.identity();
 	SetupTextures_MapObj(&this->extra->model, 0);
+
+	// Animation time
+	nw4r::g3d::ResAnmClr clrRes = rg.GetResAnmClr(colour);
+	this->extra->anmClr.setup(course, clrRes, &this->extra->mallocator, 0, 1);
+
+	this->extra->anmClr.bind(&this->extra->model, clrRes, 0, 0);
+	this->extra->model.bindAnim(&this->extra->anmClr, 0.0f);
+
+	// Animation processed in dWMMap_c::renderPathLayer() in map.cpp
 
 	this->extra->mallocator.unlink();
 }
