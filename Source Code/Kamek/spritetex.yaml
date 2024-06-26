@@ -890,3 +890,8 @@ hooks:
     src_addr_pal: 0x80AAE8E0
     target_func: 'BooZOrder'
 
+  - name: TEX_RollingBarrel # This fixes the rolling barrel sprite crash. Thank you to Ryguy for the fix, which is available in NSMBWer+.
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80A58034
+    target_func: 'TEX_RollingBarrel'

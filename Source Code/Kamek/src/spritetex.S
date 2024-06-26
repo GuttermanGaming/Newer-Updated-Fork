@@ -1332,40 +1332,32 @@ FlakeySakura:
 	li r0, 0xFF
 	blr
 	
-FlakeyStardustWhite:
+FlakeyStardustWhite: # This is a very lazy fix to the stardust falling object recolor... whatever. In base Newer, this tries to generate a random number (no idea what it does to be honest lol) and for some reason, this causes the SpriteTex setting for these to crash. By removing the random number generator, this fixed
 	li r5, 0xFF
 	li r4, 0xFF
 	li r3, 0xD0
-	bl GenerateRandomNumber
-	mr r0, r3
-	li r3, 0xFF
+	li r0, 0xFF
 	blr
 	
 FlakeyStardustGold:
 	li r5, 0xFF
 	li r4, 0x80
 	li r3, 0xD0
-	bl GenerateRandomNumber
-	mr r0, r3
-	li r3, 0x0
+	li r0, 0x00
 	blr
 	
 FlakeyStardustPurple:
 	li r5, 0x66
 	li r4, 0x00
 	li r3, 0xD0
-	bl GenerateRandomNumber
-	mr r0, r3
-	li r3, 0x99
+	li r0, 0x99
 	blr
 	
 FlakeyStardustMauve:
 	li r5, 0xCC
 	li r4, 0x99
 	li r3, 0xD0
-	bl GenerateRandomNumber
-	mr r0, r3
-	li r3, 0xCC
+	li r0, 0xCC
 	blr
 	
 	
@@ -1644,6 +1636,13 @@ NoteBlockTex:
 	# ^ addic is used instead of addi here because r0 is treated as value 0 in addi operations
 	stb r0, 0xA(r4) # store result back into string
 	blr
+	
+.global TEX_RollingBarrel # This fixes the rolling barrel sprite crash. Thank you to Ryguy for the fix, which is available in NSMBWer+.
+TEX_RollingBarrel:
+	lwz r5, 4(r3)
+	srwi r5, r5, 24
+	andi. r5, r5, 0xF
+	b GetTexFilenameForR5
 
 # Add a flag on nybble 10 to sprite 475 which changes its z-pos, to prevent z-fighting
 .extern float EightyPointZero;	# 0x8042ba68

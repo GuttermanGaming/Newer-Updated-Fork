@@ -1,4 +1,20 @@
 SECTIONS {
+	RealWmPlayerDtor = 2156948208;
+	callFooDeath = 2158430688;
+	ContinueFromLoadingCRSIN = 2157063736;
+
+	SI_Kinoko = 2157522980;
+	SI_Fireflower = 2157522992;
+	SI_Propeller = 2157523008;
+	SI_Iceflower = 2157523024;
+	SI_Penguin = 2157523040;
+	SI_Star = 2157523056;
+
+	originalSprites = 2150721664;
+	originalProfiles = 2155259720;
+	ObjectProfileList = 2151903320;
+	spriteFiles = 2150789236;
+	profileNames = 2150813896;
 	instance__7StageC4 = 2151902328;
 
 	GetResNodeNumEntries__Q34nw4r3g3d6ResMdlCFv = 2149824672;

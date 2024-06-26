@@ -328,6 +328,29 @@ hooks:
   data: 68616D6D65724D00
   name: LoadHammerFromHammerMArc
   type: patch
+- branch_type: b
+  name: LoadThisShit
+  src_addr_jpn: 2157046196
+  src_addr_jpn2: 2157046212
+  src_addr_kor: 2157063732
+  src_addr_ntsc: 2157046900
+  src_addr_ntsc2: 2157046916
+  src_addr_pal: 2157046900
+  src_addr_pal2: 2157046916
+  src_addr_twn: 2157063652
+  target_func: LoadThisShit
+  type: branch_insn
+- addr_jpn: 2157046188
+  addr_jpn2: 2157046204
+  addr_kor: 2157063724
+  addr_ntsc: 2157046892
+  addr_ntsc2: 2157046908
+  addr_pal: 2157046892
+  addr_pal2: 2157046908
+  addr_twn: 2157063644
+  data: 38c00026
+  name: LoadThisShittyCount
+  type: patch
 - name: AlwaysLoadBrosArc
   src_addr_jpn: 2157493656
   src_addr_jpn2: 2157493672
@@ -372,16 +395,6 @@ hooks:
   src_addr_twn: 2158978384
   target_func: I_hammerModelName
   type: add_func_pointer
-- area_jpn: 2147880716
-  area_jpn2: 2147880716
-  area_kor: 2147881036
-  area_ntsc: 2147880716
-  area_ntsc2: 2147880716
-  area_pal: 2147880716
-  area_pal2: 2147880716
-  area_twn: 2147881036
-  name: DisableHat99Thing
-  type: nop_insn
 - branch_type: b
   name: DisableHatForHammer
   src_addr_jpn: 2148312296
@@ -2264,7 +2277,7 @@ hooks:
   target_func: SI_hammer
   type: add_func_pointer
 - branch_type: bl
-  name: SkawoHatesMe
+  name: WMItem_AddBrres
   src_addr_jpn: 2156743180
   src_addr_jpn2: 2156743196
   src_addr_kor: 2156760828
@@ -2273,10 +2286,10 @@ hooks:
   src_addr_pal: 2156743884
   src_addr_pal2: 2156743900
   src_addr_twn: 2156760748
-  target_func: SkawoHatesMe
+  target_func: WMItem_AddBrres
   type: branch_insn
 - branch_type: bl
-  name: SkawoStillHatesMe
+  name: WMItem_AddMdl0
   src_addr_jpn: 2156743212
   src_addr_jpn2: 2156743228
   src_addr_kor: 2156760860
@@ -2285,7 +2298,7 @@ hooks:
   src_addr_pal: 2156743916
   src_addr_pal2: 2156743932
   src_addr_twn: 2156760780
-  target_func: SkawoStillHatesMe
+  target_func: WMItem_AddMdl0
   type: branch_insn
 - addr_jpn: 2147608168
   addr_jpn2: 2147608168
@@ -2301,3 +2314,5 @@ hooks:
 source_files:
 - ../src/poweruphax.S
 - ../src/poweruphax.cpp
+- ../src/stockItemFix.S
+- ../src/loading.S

@@ -1278,5 +1278,17 @@ hooks:
   src_addr_twn: 2158706224
   target_func: BooZOrder
   type: branch_insn
+- branch_type: bl
+  name: TEX_RollingBarrel
+  src_addr_jpn: 2158328116
+  src_addr_jpn2: 2158328148
+  src_addr_kor: 2158351876
+  src_addr_ntsc: 2158329940
+  src_addr_ntsc2: 2158329972
+  src_addr_pal: 2158329908
+  src_addr_pal2: 2158329940
+  src_addr_twn: 2158351748
+  target_func: TEX_RollingBarrel
+  type: branch_insn
 source_files:
 - ../src/spritetex.S

@@ -1,4 +1,20 @@
 SECTIONS {
+	RealWmPlayerDtor = 0x80902890;
+	callFooDeath = 0x80A6B410;
+	ContinueFromLoadingCRSIN = 0x8091EC78;
+	
+	SI_Kinoko = 0x8098e044;
+	SI_Fireflower = 0x8098e050;
+	SI_Propeller = 0x8098e060;
+	SI_Iceflower = 0x8098e070;
+	SI_Penguin = 0x8098e080;
+	SI_Star = 0x8098e090;
+
+	originalSprites = 0x8030a340;
+	originalProfiles = 0x8076a748;
+	ObjectProfileList = 0x8042a698;
+	spriteFiles = 0x8031ab4c;
+	profileNames = 0x80320b58;
 	instance__7StageC4 = 0x8042A2B8;
 
 	GetResNodeNumEntries__Q34nw4r3g3d6ResMdlCFv = 0x8023B4A0;

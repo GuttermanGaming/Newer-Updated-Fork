@@ -1,24 +1,24 @@
-Kamek/Build
-Kamek/Build_*
-Kamek/processed
-Kamek/AnotherASM
-Kamek/SummerASM
-Kamek/NewerASM
-Kamek/XmasASM
-Kamek/FallingLeafASM
-Kamek/kamek_pal2.x
-Kamek/kamek_ntsc.x
-Kamek/kamek_ntsc2.x
-Kamek/kamek_jpn.x
-Kamek/kamek_jpn2.x
-Kamek/kamek_kor.x
-Kamek/kamek_twn.x
-Kamek/kamek_chn.x
-Kamek/tools/cw
-Kamek/tools/*.pyc
+Source Code/Kamek/Build
+Source Code/Kamek/Build_*
+Source Code/Kamek/processed
+Source Code/Kamek/AnotherASM
+Source Code/Kamek/SummerASM
+Source Code/Kamek/NewerASM
+Source Code/Kamek/XmasASM
+Source Code/Kamek/FallingLeafASM
+Source Code/Kamek/kamek_pal2.x
+Source Code/Kamek/kamek_ntsc.x
+Source Code/Kamek/kamek_ntsc2.x
+Source Code/Kamek/kamek_jpn.x
+Source Code/Kamek/kamek_jpn2.x
+Source Code/Kamek/kamek_kor.x
+Source Code/Kamek/kamek_twn.x
+Source Code/Kamek/kamek_chn.x
+Source Code/Kamek/tools/cw
+Source Code/Kamek/tools/*.pyc
 *.pyc
-Kamek/tools/__pycache__
+Source Code/Kamek/tools/__pycache__
 __pycache__
 .DS_Store
-Bootstrap/BoostrapOutput
-Bootstrap/-v
+Source Code/Bootstrap/BoostrapOutput
+Source Code/Bootstrap/-v
