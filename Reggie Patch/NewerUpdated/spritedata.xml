@@ -1984,10 +1984,6 @@
     <value nybble="10" title="Speed" comment="This determines the speed of the wheel's rotation. A speed of 0 still moves, just very slowly."/>
   </sprite> <!-- #286: Rotating Wooden Airship Wheel -->
 
-  <!-- Investigate Nybble 12 - Right = 2? If so, then it's suspected that Left = 1 and Towards Player = 0. True or False? -->
-  <sprite id="288" name="(Crashes) Rolling Barrel" notes="&lt;font color=&quot;Red&quot;&gt;This sprite crashes in NewerSMBW.&lt;/font&gt;">
-  </sprite> <!-- #288: (Crashes) Rolling Barrel -->
-
   <sprite id="289" name="Wooden/Metal Box" notes="Wooden boxes can be opened if Ground-Pounded, struck from below, etc. and can award the player with an item. Metal boxes can instantly kill the player, cannot be destroyed, and make a POW sound when falling. They also have odd issues when it comes to respawning if they have moved from their original location.">
     <dualbox nybble="10.4" title1="Wooden Box" title2="Metal Box"/>
     <list nybble="11.3-11.4" title="Size">
@@ -2361,10 +2357,10 @@
       <entry value="4">Maple Leaves - Gold</entry>
       <entry value="5">Maple Leaves - Chestnut</entry>
       <entry value="6">Sakura Petals</entry>
-      <entry value="7">Stardust - White (Crashes)</entry>
-      <entry value="8">Stardust - Gold (Crashes)</entry>
-      <entry value="9">Stardust - Purple (Crashes)</entry>
-      <entry value="10">Stardust - Mauve (Crashes)</entry>
+      <entry value="7">Stardust - White</entry>
+      <entry value="8">Stardust - Gold</entry>
+      <entry value="9">Stardust - Purple</entry>
+      <entry value="10">Stardust - Mauve</entry>
     </list> <!-- Appears only if Falling Objects is set -->
   </sprite> <!-- #374: Effect - Falling Objects and Wind -->
 

@@ -1,0 +1,1 @@
+This Reggie! Next patch was designed for the latest version of the source code, which can be found on the Reggie! Next Github page. It likely will not work with pre-compiled or built versions.
