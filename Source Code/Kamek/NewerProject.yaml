@@ -17,7 +17,6 @@ modules:
   - processed/cutScene.yaml
   - processed/bonepiece.yaml
   - processed/bugfixes.yaml
-  - processed/profile.yaml
   - processed/koopatlas.yaml
   - processed/pregame.yaml
   - processed/layouthax.yaml
@@ -30,8 +29,6 @@ modules:
   - processed/spritetex.yaml
 #  - processed/gakenoko.yaml
   - processed/poweruphax.yaml
-  # - processed/bubbleSuit.yaml
-  # - processed/poweruphax2.yaml - This may add a second powerup in the future. If you want to debug/add this for some reason, (it does not work properly) you can uncomment this line & the line above. Then comment the line with regular poweruphax.yaml to add it. Note that this may be removed due to the issues it currently has.
   # - processed/heapbar.yaml
   - processed/randtiles.yaml
   - processed/objkinoko.yaml

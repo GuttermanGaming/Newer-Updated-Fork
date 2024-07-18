@@ -1,8 +1,4 @@
 SECTIONS {
-	ContinueFromTinyTable = 0x80146854;
-	ContinueFromThatFix = 0x800D47A0;
-	pow = 0x802E5894;
-	
 	RealWmPlayerDtor = 0x80902890;
 	callFooDeath = 0x80A6B410;
 	ContinueFromLoadingCRSIN = 0x8091EC78;
