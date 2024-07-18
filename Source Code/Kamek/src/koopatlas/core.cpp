@@ -549,10 +549,12 @@ void dScKoopatlas_c::executeState_Normal() {
 		stockItem->show = true;
 		state.setState(&StateID_PowerupsWait);
 		hud->hideAll();
+		MapSoundPlayer(SoundRelatedClass, SE_SYS_DECIDE, 1);
 	} else if (nowPressed & WPAD_PLUS) {
 		CSMENU_ACTIVE(this->csMenu) = true;
 		state.setState(&StateID_CSMenu);
 		hud->hideAll();
+		MapSoundPlayer(SoundRelatedClass, SE_SYS_PAUSE, 1);
 #ifdef NEWER_DEBUG
 	 } else if (nowPressed & WPAD_MINUS) {
 	 	pathManager.unlockAllPaths(2);

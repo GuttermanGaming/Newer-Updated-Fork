@@ -15,6 +15,7 @@ Source Code/Kamek/kamek_kor.x
 Source Code/Kamek/kamek_twn.x
 Source Code/Kamek/kamek_chn.x
 Source Code/Kamek/tools/cw
+Source Code/Kamek/tmp
 Source Code/Kamek/tools/*.pyc
 *.pyc
 Source Code/Kamek/tools/__pycache__
