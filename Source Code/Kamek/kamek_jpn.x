@@ -1,4 +1,8 @@
 SECTIONS {
+	ContinueFromTinyTable = 2148820260;
+	ContinueFromThatFix = 2148353584;
+	pow = 2150519732;
+
 	RealWmPlayerDtor = 2156930512;
 	callFooDeath = 2158406928;
 	ContinueFromLoadingCRSIN = 2157046200;

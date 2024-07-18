@@ -505,6 +505,8 @@ enum
 	AC_BOSS_KOOPA_BG_EFFECT = 482,
 
 	// Start of custom entries
+	BubbleSuit = 483,
+	BubbleCoin = 484,
 
 	Num
 };
@@ -1272,7 +1274,9 @@ enum
 	LASTACTOR, // 749
 
 	// Beginning of new entries
-
+	BubbleSuit, // 750
+	BubbleCoin, // 751
+	
 	Num
 };
 

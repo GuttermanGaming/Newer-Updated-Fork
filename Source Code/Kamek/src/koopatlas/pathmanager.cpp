@@ -1056,9 +1056,9 @@ void dWMPathManager_c::startMovementTo(dKPPath_s *path) {
 		{run,2.0f,10.0f, -1,-1.0f, SE_PLY_FOOTNOTE_CS_WATER,SE_NULL, "Wm_mr_foot_water",0},
 
 		// Jumping
-		{jump,1.0f,1.0f, -1,2.5f, SE_NULL,SE_PLY_JUMP, 0,0},
-		{jump,1.0f,10.0f, -1,2.5f, SE_NULL,SE_PLY_JUMP, 0,0},
-		{jump,1.0f,10.0f, -1,2.5f, SE_NULL,SE_PLY_JUMP, 0,0},
+		{jump,1.0f,1.0f, -1,2.5f, SE_NULL,SE_VOC_MA_PJ_JUMP, 0,0},
+		{jump,1.0f,10.0f, -1,2.5f, SE_NULL,SE_VOC_MA_PJ_JUMP, 0,0},
+		{jump,1.0f,10.0f, -1,2.5f, SE_NULL,SE_VOC_MA_PJ_JUMP, 0,0},
 
 		// Jump water (actually cannon)
 		{dm_notice,1.0f,10.0f, -1,-1.0f, SE_NULL,SE_VOC_MA_CANNON_SHOT, 0,0},

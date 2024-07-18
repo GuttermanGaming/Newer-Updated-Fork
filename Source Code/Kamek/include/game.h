@@ -33,6 +33,8 @@ float cos(float x);
 float sin(float x);
 float ceil(float x);
 float floor(float x);
+float pow(float x, float y);
+float sqrt(float x) { return pow(x, 0.5f); }
 }
 enum Direction {
 	RIGHT = 0,
@@ -1980,6 +1982,8 @@ public:
 	static fBase_c *search(Actors name, fBase_c *previous = 0);
 	static fBase_c *search(u32 id);
 	static fBase_c *searchByBaseType(int type, fBase_c *previous);
+	static fBase_c *searchByProfileId(u16 profileId, fBase_c *previous = 0);
+	static fBase_c *searchById(u32 id);
 };
 
 class dBase_c : public fBase_c {
@@ -2152,6 +2156,8 @@ public:
 
 	static dStageActor_c *create(Actors type, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
 	static dStageActor_c *createChild(Actors type, dStageActor_c *parent, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
+	static dStageActor_c *create(u16 profileId, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
+	static dStageActor_c *createChild(u16 profileId, dStageActor_c *parent, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
 
 	// these are valid while in onCreate
 	static u8 *creatingByteStorage; // 0x80429FF4
@@ -3754,12 +3760,14 @@ class dStockItemShadow_c : public dBase_c {
 	m2d::EmbedLayout_c layout;
 
 	nw4r::lyt::Pane *rootPane;
-	nw4r::lyt::TextBox *textBoxes[14];
-	nw4r::lyt::Picture *buttonBases[7];
+	nw4r::lyt::TextBox *textBoxes[16];
+	nw4r::lyt::Picture *buttonBases[8];
 	bool layoutLoaded, visible, needsUpdate;
 	int values[8];
 	nw4r::lyt::TextBox *hammerValue, *hammerX;
 	nw4r::lyt::Picture *hammerButtonBase;
+	nw4r::lyt::TextBox *boomerValue, *boomerX;
+	nw4r::lyt::Picture *boomerButtonBase;
 };
 
 class dStockItem_c : public dBase_c {
@@ -4057,6 +4065,13 @@ class StageC4 {
 		u32 _10, _14;
 		u8 flags, _19, _1A, willDisplay, _1C, _1D;
 };
+
+int getNybbleValue(u32 settings, int fromNybble, int toNybble) {
+	int numberOfNybble = (toNybble - fromNybble) + 1;
+	int valueToUse = 48 - (4 * toNybble);
+	int fShit = pow(16, numberOfNybble) - 1;
+	return ((settings >> valueToUse) & fShit);
+}
 
 #endif
 
