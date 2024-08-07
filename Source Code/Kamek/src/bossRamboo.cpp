@@ -330,7 +330,7 @@ void daRamboo_c::endState_Grow() {
 
 
 float RightmostPlayerPos() {
-	dStageActor_c* current;
+	dStageActor_c* current = 0;
 	current->pos.x = 0.0;
 
 	for(char ii = 0; ii < 4; ii++) {
@@ -340,7 +340,7 @@ float RightmostPlayerPos() {
 		}
 				// actor->pos.x, actor->pos.y, actor->pos.z,
 				// player->pos.x, player->pos.y, player->pos.z);
-		if(player->pos.x > current->pos.x) {
+		if(current == 0 || player->pos.x > current->pos.x) {
 			current = player;
 		}
 	}

@@ -640,13 +640,15 @@ bool dWMPathManager_c::evaluateUnlockCondition(u8 *&in, SaveBlock *save, int sta
 
 	if (conditionType == 0) {
 		u8 subConditionType = controlByte & 0x3F;
+		u8 one, two;
+		int compareOne, compareTwo;
 		switch (subConditionType) {
 			case 0: case 1: case 2: case 3:
-				u8 one = *(in++);
-				u8 two = *(in++);
+				one = *(in++);
+				two = *(in++);
 
-				int compareOne = (one & 0x80) ? cachedUnspentStarCoinCount : cachedTotalStarCoinCount;
-				int compareTwo = ((one & 0x7F) << 8) | two;
+				compareOne = (one & 0x80) ? cachedUnspentStarCoinCount : cachedTotalStarCoinCount;
+				compareTwo = ((one & 0x7F) << 8) | two;
 
 				switch (subConditionType) {
 					case 0:
@@ -1203,6 +1205,8 @@ void dWMPathManager_c::startMovementTo(dKPPath_s *path) {
 	}
 }
 
+extern "C" void LoadMapScene();
+
 void dWMPathManager_c::moveThroughPath(int pressedDir) {
 	dKPNode_s *from, *to;
 
@@ -1375,7 +1379,8 @@ void dWMPathManager_c::moveThroughPath(int pressedDir) {
 
 				OSReport("Found!\n");
 				copyWorldDefToSave(world);
-
+				LoadMapScene(); // Reload lighting data
+				
 				bool wzHack = false;
 				if (dScKoopatlas_c::instance->warpZoneHacks) {
 					save->hudHintH += 1000;
@@ -1443,6 +1448,7 @@ void dWMPathManager_c::moveThroughPath(int pressedDir) {
 
 			dScKoopatlas_c::instance->keepMusicPlaying = true;
 			ActivateWipe(to->transition);
+			LoadMapScene(); // Reload lighting data
 			u32 saveFlag = (shouldRequestSave ? 0x80000 : 0);
 			saveFlag |= (checkedForMoveAfterEndLevel ? 0x40000 : 0);
 			saveFlag |= (afterFortressMode ? 0x20000 : 0);
